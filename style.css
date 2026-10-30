@@ -1,27 +1,25 @@
 body {
   font-family: Arial;
   margin: 0;
-  background-color:white;
-  color:black;
+  background-color: white;
+  color: black;
 }
 
 header {
-  background-color:black;
+  background-color: black;
   color: white;
   padding: 20px;
   text-align: center;
 }
-
 
 main,
 section {
   padding: 25px;
   margin: 15px;
   background-color: white;
-  
 }
 
 footer {
   text-align: center;
-  
+  color: black;
 }
