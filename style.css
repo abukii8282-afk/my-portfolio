@@ -1041,3 +1041,116 @@ a:focus-visible {
     animation-iteration-count: 1 !important;
   }
 }
+
+/* ===== Modern Border Design ===== */
+
+:root {
+  --border-color: #d5e3f0;
+  --border-hover: #14b8a6;
+  --border-accent: #2563eb;
+}
+
+/* Cards */
+.skill-card,
+.project-card,
+.learning-item,
+.goal-card {
+  border: 1.5px solid var(--border-color);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(15, 39, 71, 0.05);
+}
+
+/* Card hover effect */
+.skill-card:hover,
+.project-card:hover,
+.learning-item:hover,
+.goal-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(20, 184, 166, 0.12);
+}
+
+/* Section borders */
+.about-section,
+.skills-section,
+.projects-section,
+.learning-section,
+.goals-section,
+.contact-section {
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Buttons */
+.button {
+  border: 2px solid var(--border-accent);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-3px);
+}
+
+/* Contact details */
+.contact-details {
+  border: 1.5px solid var(--border-color);
+  border-radius: 16px;
+  padding: 25px;
+}
+
+/* Profile photo */
+.profile-photo {
+  border: 4px solid var(--border-hover);
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(20, 184, 166, 0.18);
+}
+/* Main website background */
+body {
+  background-color: #f4f8fc;
+}
+
+/* Home section */
+.hero-section {
+  background-color: #eaf3ff;
+}
+
+/* About section */
+.about-section {
+  background-color: #ffffff;
+}
+
+/* Skills section */
+.skills-section {
+  background-color: #f4f8fc;
+}
+
+/* Projects section */
+.projects-section {
+  background-color: #ffffff;
+}
+
+/* Learning section */
+.learning-section {
+  background-color: #edf7f7;
+}
+
+/* Goals section */
+.goals-section {
+  background-color: #ffffff;
+}
+
+/* Contact section */
+.contact-section {
+  background-color: #eaf3ff;
+}
+
+/* Cards */
+.skill-card,
+.project-card,
+.learning-item,
+.goal-card,
+.contact-details {
+  background-color: #ffffff;
+}
