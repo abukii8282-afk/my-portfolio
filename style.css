@@ -1154,3 +1154,83 @@ body {
 .contact-details {
   background-color: #ffffff;
 }
+
+/* =====================================================
+   SMALL VISUAL AND INTERACTION REFINEMENTS
+   Add this block at the VERY END of your existing style.css
+===================================================== */
+
+/* Slim page-reading progress line */
+
+.scroll-progress {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--cyan), var(--blue));
+  box-shadow: 0 0 12px rgba(85, 217, 237, 0.35);
+  pointer-events: none;
+}
+
+/* Clear active-page indication in the navigation */
+
+.nav-links a[aria-current="location"] {
+  color: var(--cyan);
+}
+
+/* Smooth reveal effect */
+
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.55s ease,
+    transform 0.55s ease;
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal-on-scroll.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Gentle feedback for interactive cards and links */
+
+.email-card,
+.text-link,
+.back-to-top,
+.social-placeholder,
+.skill-card,
+.fact-card,
+.education-card,
+.project-card {
+  transition:
+    transform 0.22s ease,
+    border-color 0.22s ease,
+    color 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.email-card:hover {
+  transform: translateY(-3px);
+}
+
+/* Respect accessibility preferences */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+  }
+}
