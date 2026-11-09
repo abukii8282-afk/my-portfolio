@@ -1234,3 +1234,137 @@ body {
     transform: none;
   }
 }
+/* ===== Contact form ===== */
+.contact-form {
+  max-width: 600px;
+  margin: 30px auto 0;
+  padding: 30px;
+  text-align: left;
+  background: #ffffff;
+  border: 1.5px solid var(--border-color);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+.form-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: var(--heading-color);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 12px 14px;
+  font: inherit;
+  color: var(--text-color);
+  background: #ffffff;
+  border: 1.5px solid var(--border-color);
+  border-radius: 8px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+.form-status {
+  min-height: 24px;
+  font-weight: 600;
+}
+.form-status.error {
+  color: #dc2626;
+}
+.form-status.success {
+  color: #16a34a;
+}
+
+/* ===== Theme toggle button ===== */
+.theme-toggle {
+  padding: 8px 14px;
+  margin-left: 8px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--heading-color);
+  background: transparent;
+  border: 1.5px solid var(--border-color);
+  border-radius: 20px;
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent-color);
+}
+
+/* ===== Dark mode ===== */
+html[data-theme="dark"] {
+  --primary-color: #e6f1ff;
+  --secondary-color: #4fd1c5;
+  --accent-color: #2dd4bf;
+  --heading-color: #e6edf5;
+  --text-color: #b6c2d1;
+  --light-text: #94a3b8;
+  --border-color: #25364f;
+  --shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+}
+
+html[data-theme="dark"] body,
+html[data-theme="dark"] .skills-section {
+  background-color: #0b1220;
+}
+
+html[data-theme="dark"] .hero-section,
+html[data-theme="dark"] .contact-section {
+  background-color: #0f1a2e;
+}
+
+html[data-theme="dark"] .about-section,
+html[data-theme="dark"] .projects-section,
+html[data-theme="dark"] .goals-section {
+  background-color: #0d1626;
+}
+
+html[data-theme="dark"] .learning-section {
+  background-color: #101c30;
+}
+
+html[data-theme="dark"] .main-navigation {
+  background-color: #0b1220;
+}
+
+html[data-theme="dark"] .skill-card,
+html[data-theme="dark"] .project-card,
+html[data-theme="dark"] .learning-item,
+html[data-theme="dark"] .goal-card,
+html[data-theme="dark"] .contact-details,
+html[data-theme="dark"] .contact-form,
+html[data-theme="dark"] .contact-form input,
+html[data-theme="dark"] .contact-form textarea {
+  background-color: #152238;
+}
+
+html[data-theme="dark"] .hero-introduction {
+  background-color: #16324a;
+}
+html[data-theme="dark"] .project-status {
+  background-color: #12332f;
+  color: #5eead4;
+}
+html[data-theme="dark"] .projects-note {
+  background-color: #101c30;
+}
+html[data-theme="dark"] .primary-button:hover {
+  color: #0b1220;
+}
+html[data-theme="dark"] .secondary-button:hover {
+  color: #0b1220;
+}

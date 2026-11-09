@@ -241,6 +241,85 @@ document.addEventListener("DOMContentLoaded", function () {
   externalLinks.forEach(function (link) {
     link.setAttribute("rel", "noopener noreferrer");
   });
+  // ==========================================
+  // DARK / LIGHT MODE TOGGLE
+  // ==========================================
+
+  const navList = document.querySelector(".nav-list");
+  const root = document.documentElement;
+
+  const savedTheme = localStorage.getItem("theme") || "light";
+  root.setAttribute("data-theme", savedTheme);
+
+  if (navList) {
+    const item = document.createElement("li");
+    const toggle = document.createElement("button");
+
+    toggle.type = "button";
+    toggle.className = "theme-toggle";
+
+    function updateToggle() {
+      const isDark = root.getAttribute("data-theme") === "dark";
+      toggle.textContent = isDark ? "☀️ Light" : "🌙 Dark";
+      toggle.setAttribute(
+        "aria-label",
+        isDark ? "Switch to light mode" : "Switch to dark mode",
+      );
+    }
+
+    toggle.addEventListener("click", function () {
+      const next =
+        root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      root.setAttribute("data-theme", next);
+      localStorage.setItem("theme", next);
+      updateToggle();
+    });
+
+    updateToggle();
+    item.appendChild(toggle);
+    navList.appendChild(item);
+  }
+
+  // ==========================================
+  // CONTACT FORM
+  // ==========================================
+
+  const contactForm = document.getElementById("contact-form");
+  const formStatus = document.getElementById("form-status");
+
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const name = contactForm.name.value.trim();
+      const email = contactForm.email.value.trim();
+      const message = contactForm.message.value.trim();
+
+      if (!name || !email || !message) {
+        formStatus.textContent = "Please fill in all fields.";
+        formStatus.className = "form-status error";
+        return;
+      }
+
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        formStatus.textContent = "Please enter a valid email address.";
+        formStatus.className = "form-status error";
+        return;
+      }
+
+      const subject = encodeURIComponent("Portfolio message from " + name);
+      const body = encodeURIComponent(
+        message + "\n\nFrom: " + name + " (" + email + ")",
+      );
+
+      window.location.href =
+        "mailto:abukii8282@gmail.com?subject=" + subject + "&body=" + body;
+
+      formStatus.textContent = "Thank you! Your email app is opening.";
+      formStatus.className = "form-status success";
+      contactForm.reset();
+    });
+  }
 
   // ==========================================
   // 10. WELCOME MESSAGE
