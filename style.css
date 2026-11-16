@@ -1390,3 +1390,134 @@ html[data-theme="dark"] .secondary-button:hover {
     height: 120px;
   }
 }
+
+/* =========================================
+   FINAL BACKGROUND COLOR IMPROVEMENT
+========================================= */
+
+:root {
+  --primary-color: #172554;
+  --secondary-color: #1e5b8a;
+  --accent-color: #0891b2;
+
+  --heading-color: #172554;
+  --text-color: #475569;
+  --light-text: #64748b;
+
+  --background-color: #f3f5f8;
+  --section-background: #f3f5f8;
+  --card-background: #ffffff;
+
+  --border-color: #e2e8f0;
+
+  --shadow: 0 6px 22px rgba(23, 37, 84, 0.06);
+  --shadow-hover: 0 12px 28px rgba(23, 37, 84, 0.11);
+}
+
+/* Main page background */
+body {
+  background-color: #f3f5f8;
+}
+
+/* Header */
+.site-header {
+  background: linear-gradient(135deg, #172554, #1e3a5f);
+}
+
+/* Navigation */
+.main-navigation {
+  background-color: #ffffff;
+}
+
+/* Hero */
+.hero-section {
+  background: linear-gradient(135deg, #e8eff8, #f3f5f8);
+}
+
+/* Main sections */
+.about-section,
+.projects-section,
+.goals-section {
+  background-color: #ffffff;
+}
+
+.skills-section,
+.learning-section,
+.contact-section {
+  background-color: #f3f5f8;
+}
+
+/* Cards */
+.skill-card,
+.project-card,
+.learning-item,
+.goal-card,
+.contact-details,
+.contact-form {
+  background-color: #ffffff;
+  border-color: #e2e8f0;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+.section-title {
+  color: #172554;
+}
+
+/* Accent details */
+.section-title::after {
+  background-color: #0891b2;
+}
+
+.skill-title,
+.learning-title,
+.goal-title {
+  color: #1e5b8a;
+}
+
+/* Buttons */
+.primary-button {
+  background-color: #1e5b8a;
+  border-color: #1e5b8a;
+}
+
+.primary-button:hover {
+  background-color: #172554;
+  border-color: #172554;
+}
+
+/* Project note */
+.projects-note {
+  background-color: #edf2f7;
+  border-left-color: #0891b2;
+}
+
+/* Contact form */
+.contact-form input,
+.contact-form textarea {
+  background-color: #ffffff;
+  border-color: #e2e8f0;
+}
+
+/* Footer */
+.site-footer {
+  background-color: #172554;
+}
+
+/* Profile photo */
+.profile-photo {
+  border-color: #0891b2;
+}
+
+/* Consistent section borders */
+.about-section,
+.skills-section,
+.projects-section,
+.learning-section,
+.goals-section,
+.contact-section {
+  border-bottom: 1px solid #e2e8f0;
+}
