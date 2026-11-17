@@ -241,18 +241,18 @@ document.addEventListener("DOMContentLoaded", function () {
   externalLinks.forEach(function (link) {
     link.setAttribute("rel", "noopener noreferrer");
   });
+
   // ==========================================
   // DARK / LIGHT MODE TOGGLE
   // ==========================================
 
-  const navList = document.querySelector(".nav-list");
+  const navContainer = document.querySelector(".nav-container");
   const root = document.documentElement;
 
   const savedTheme = localStorage.getItem("theme") || "light";
   root.setAttribute("data-theme", savedTheme);
 
-  if (navList) {
-    const item = document.createElement("li");
+  if (navContainer) {
     const toggle = document.createElement("button");
 
     toggle.type = "button";
@@ -260,7 +260,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function updateToggle() {
       const isDark = root.getAttribute("data-theme") === "dark";
+
       toggle.textContent = isDark ? "☀️ Light" : "🌙 Dark";
+
       toggle.setAttribute(
         "aria-label",
         isDark ? "Switch to light mode" : "Switch to dark mode",
@@ -270,14 +272,16 @@ document.addEventListener("DOMContentLoaded", function () {
     toggle.addEventListener("click", function () {
       const next =
         root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+
       root.setAttribute("data-theme", next);
       localStorage.setItem("theme", next);
+
       updateToggle();
     });
 
     updateToggle();
-    item.appendChild(toggle);
-    navList.appendChild(item);
+
+    navContainer.appendChild(toggle);
   }
 
   // ==========================================

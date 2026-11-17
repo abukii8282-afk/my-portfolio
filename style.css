@@ -1773,3 +1773,54 @@ h4,
     flex-shrink: 0;
   }
 }
+
+/* Separate theme button from navigation links */
+
+.nav-container {
+  position: relative;
+  justify-content: center;
+}
+
+.theme-toggle {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+
+  padding: 8px 14px;
+  margin: 0;
+
+  color: var(--heading-color);
+  background-color: var(--section-background);
+
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent-color);
+}
+
+@media (max-width: 600px) {
+  .nav-container {
+    justify-content: flex-start;
+    padding: 8px 10px;
+  }
+
+  .nav-list {
+    flex-shrink: 0;
+  }
+
+  .theme-toggle {
+    position: sticky;
+    top: auto;
+    right: auto;
+    transform: none;
+    flex-shrink: 0;
+  }
+}
